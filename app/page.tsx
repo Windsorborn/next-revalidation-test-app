@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link';
 
 export default async function Home() {
 
@@ -45,17 +46,15 @@ export default async function Home() {
       </div>
 
       <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <Link
+          href="/another-page"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
-            Docs <span>-&gt;</span>
+            Another Page <span>-&gt;</span>
           </h2>
           <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        </Link>
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
