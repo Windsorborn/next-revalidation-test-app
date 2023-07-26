@@ -78,6 +78,7 @@
   align-items: center;
   position: relative;
   padding: 4rem 0;
+  flex-direction: column;
 }
 
 .center::before {
@@ -106,6 +107,7 @@
 
 .logo {
   position: relative;
+  margin-bottom: 40px;
 }
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {

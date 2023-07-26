@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 
-export default function Home() {
+export default async function Home() {
+
+  const response = await fetch(`http://worldtimeapi.org/api/timezone/Australia/Sydney?t=${Date.now()}`, { next: { tags: ['timezone'] } });
+  const data = await response.json();
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -37,6 +41,7 @@ export default function Home() {
           height={37}
           priority
         />
+        {data?.datetime && <div>{data.datetime}</div>}
       </div>
 
       <div className={styles.grid}>
