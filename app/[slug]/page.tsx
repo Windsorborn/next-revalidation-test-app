@@ -1,18 +1,18 @@
 import Image from 'next/image'
-import styles from './page.module.css'
+import styles from '../page.module.css'
 import Link from 'next/link';
 
-export default async function Home() {
+export default async function Home({params}: { params: { slug: string }}) {
 
-  const response = await fetch(`http://worldtimeapi.org/api/timezone/Australia/Sydney?t=${Date.now()}`, { next: { tags: ['tag::timezone'] } });
+  const response = await fetch(`http://worldtimeapi.org/api/timezone/Australia/Sydney?t=${Date.now()}`, { next: { tags: [`tag::timezone:${params.slug}`] } });
   const data = await response.json();
 
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
+          A page with dynamic param&nbsp;
+          <code className={styles.code}>app/[slug]/page.tsx</code>
         </p>
         <div>
           <a
@@ -42,6 +42,7 @@ export default async function Home() {
           height={37}
           priority
         />
+        <div>Slug: {params.slug}</div>
         {data?.datetime && <div>{data.datetime}</div>}
       </div>
 
