@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     console.log('Revalidating....');
     revalidateTag(tag);
     console.log('Success Revalidation');
-    await fetch((process.env.VERCEL_URL || '/'));
+    await fetch('https://next-revalidation-test-app-windsorborn.vercel.app/');
     return NextResponse.json({ revalidated: true, now: Date.now() });
   }
   else{
