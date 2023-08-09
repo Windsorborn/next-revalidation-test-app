@@ -98,3 +98,18 @@ export default async function Home({params}: { params: { slug: string }}) {
     </main>
   )
 }
+
+export async function generateStaticParams() {
+
+return [
+  {
+    slug: 'any'
+  },
+  {
+    slug: 'test',
+  },
+  {
+    slug: 'hello',
+  }
+]
+}
