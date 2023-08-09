@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default async function Home() {
 
-  const response = await fetch(`http://worldtimeapi.org/api/timezone/Australia/Sydney?t=${Date.now()}`, { next: { tags: ['tag::timezone'] } });
+  const response = await fetch(`http://worldtimeapi.org/api/timezone/Australia/Sydney?t=${Date.now()}`, { next: { tags: ['timezone'] } });
   const data = await response.json();
 
   return (
@@ -56,29 +56,25 @@ export default async function Home() {
           <p>Find in-depth information about Next.js features and API.</p>
         </Link>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <Link
+          href="/another-page-1"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
-            Learn <span>-&gt;</span>
+            Another Page 1 <span>-&gt;</span>
           </h2>
           <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        </Link>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <Link
+          href="/another-page-2"
           className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <h2>
-            Templates <span>-&gt;</span>
+            Another Page 2 <span>-&gt;</span>
           </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
+          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
+        </Link>
 
         <a
           href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -90,7 +86,7 @@ export default async function Home() {
             Deploy <span>-&gt;</span>
           </h2>
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+           Explore the Next.js 13 playground.
           </p>
         </a>
       </div>

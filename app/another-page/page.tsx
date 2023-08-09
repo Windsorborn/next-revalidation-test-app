@@ -39,6 +39,7 @@ export default function AnotherPage() {
           priority
         />
       </div>
+      <div>Another Page</div>
     </main>
   )
 }
